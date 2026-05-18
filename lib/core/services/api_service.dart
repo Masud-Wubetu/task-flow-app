@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
@@ -33,10 +34,10 @@ class ApiService {
       final res = await _client.get(uri, headers: _headers)
           .timeout(const Duration(seconds: 12));
       return _handleResponse(res);
-    } on SocketException {
-      throw ApiException('No internet connection. Please check your network.');
     } on TimeoutException {
       throw ApiException('Request timed out. Please try again.');
+    } on SocketException {
+      throw ApiException('No internet connection. Please check your network.');
     }
   }
 
@@ -47,10 +48,10 @@ class ApiService {
           .post(uri, headers: _headers, body: jsonEncode(body))
           .timeout(const Duration(seconds: 12));
       return _handleResponse(res);
-    } on SocketException {
-      throw ApiException('No internet connection.');
     } on TimeoutException {
       throw ApiException('Request timed out.');
+    } on SocketException {
+      throw ApiException('No internet connection.');
     }
   }
 
@@ -61,10 +62,10 @@ class ApiService {
           .put(uri, headers: _headers, body: jsonEncode(body))
           .timeout(const Duration(seconds: 12));
       return _handleResponse(res);
-    } on SocketException {
-      throw ApiException('No internet connection.');
     } on TimeoutException {
       throw ApiException('Request timed out.');
+    } on SocketException {
+      throw ApiException('No internet connection.');
     }
   }
 
@@ -75,10 +76,10 @@ class ApiService {
           .delete(uri, headers: _headers)
           .timeout(const Duration(seconds: 12));
       return _handleResponse(res);
-    } on SocketException {
-      throw ApiException('No internet connection.');
     } on TimeoutException {
       throw ApiException('Request timed out.');
+    } on SocketException {
+      throw ApiException('No internet connection.');
     }
   }
 
