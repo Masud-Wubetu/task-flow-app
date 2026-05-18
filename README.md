@@ -64,9 +64,9 @@ flutter run
 
 ## 📸 Screenshots
 
-| Home Screen | Add Task | Edit Task |
-|-------------|----------|-----------|
-| ![home](screenshots/home.png) | ![add](screenshots/add.png) | ![edit](screenshots/edit.png) |
+![alt text](image.png) 
+![alt text](image-1.png) 
+![alt text](image-2.png) 
 
 ---
 
